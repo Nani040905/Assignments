@@ -1,0 +1,71 @@
+GET http://localhost:3000/user-api/users
+
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":100,
+    "name":"ravi",
+    "age":19
+}
+
+###
+PUT http://localhost:3000/user-api/users/
+Content-Type: application/json
+
+{
+  "id": 101,
+  "name": "vijay kumar",
+  "age": 20
+}
+
+### Read a user by id
+GET http://localhost:3000/user-api/users/100
+
+###
+DELETE http://localhost:3000/user-api/users/100
+
+
+###
+GET http://localhost:3000/product-api/products
+
+###
+GET http://localhost:3000/product-api/products-id/2
+###
+GET http://localhost:3000/product-api/products-brand/Realme
+###
+POST  http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":1,
+    "name":"Phone",
+    "price":1000000,
+    "brand":"Realme"
+}
+
+###
+POST  http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":2,
+    "name":"laptop",
+    "price":1000000,
+    "brand":"Dell"
+}
+
+###
+PUT  http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":2,
+    "name":"laptop",
+    "price":1000000,
+    "brand":"HP"
+}
+
+###
+DELETE http://localhost:3000/product-api/products/1
