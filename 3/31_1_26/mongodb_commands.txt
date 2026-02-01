@@ -1,0 +1,94 @@
+show databases
+show dbs
+
+->  admin            40.00 KiB
+    config          100.00 KiB
+    demoAPT3         24.00 KiB
+    demoATP         124.00 KiB
+    demoATP2        132.00 KiB
+    local            76.00 KiB
+    n8n_popularity   80.00 KiB
+    test            140.00 KiB
+    travelplanner   192.00 KiB
+
+
+use demoATP
+
+->  switched to db demoATP
+
+db.createCollection('emps')
+->  { "ok" : 1 }
+
+
+show collections
+
+->  emps
+    users
+
+db.collection_name.insertOne({name:"ravi",age:21,city:"hyderabad"})
+->  { "acknowledged" : true, "insertedId" : ObjectId('697f6d84f1edc8c9c27e0545') }
+
+
+db.emps.insertMany([
+  {name:"anil",age:25,city:"chennai"},
+  {name:"suresh",age:30,city:"bangalore"},
+  {name:"priya",age:22,city:"hyderabad"}
+])
+->  {
+      acknowledged: true,
+      insertedIds: {
+        '0': ObjectId('697f6e03f1edc8c9c27e0546'),
+        '1': ObjectId('697f6e03f1edc8c9c27e0547'),
+        '2': ObjectId('697f6e03f1edc8c9c27e0548')
+      }
+    }
+
+
+db.emps.find()
+
+->  { "_id" : ObjectId("697f6d84f1edc8c9c27e0545"), "name" : "ravi", "age" : 21, "city" : "hyderabad" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0546"), "name" : "anil", "age" : 25, "city" : "chennai" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0547"), "name" : "suresh", "age" : 30, "city" : "bangalore" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0548"), "name" : "priya", "age" : 22, "city" : "hyderabad" }
+
+
+db.emps.findOne({city:"hyderabad"})
+->  { "_id" : ObjectId("697f6d84f1edc8c9c27e0545"), "name" : "ravi", "age" : 21, "city" : "hyderabad" }
+
+
+db.emps.find({age:{$gt:23}})
+->  { "_id" : ObjectId("697f6e03f1edc8c9c27e0546"), "name" : "anil", "age" : 25, "city" : "chennai" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0547"), "name" : "suresh", "age" : 30, "city" : "bangalore" }
+
+
+db.emps.updateOne(
+  {name:"ravi"},
+  {$set:{age:22}}
+)
+->  { "acknowledged" : true, insertedId: null, "matchedCount" : 1, "modifiedCount" : 1 , upsertedCount: 0 }
+
+
+db.emps.updateMany(
+  {city:"hyderabad"},
+  {$set:{state:"TS"}}
+)
+->  { "acknowledged" : true, insertedId: null, "matchedCount" : 2, "modifiedCount" : 2, upsertedCount: 0 }
+
+
+db.emps.find()
+->  { "_id" : ObjectId("697f6d84f1edc8c9c27e0545"), "name" : "ravi", "age" : 22, "city" : "hyderabad", "state":"TS" }
+    { "_id" : ObjectId("697f6d90f1edc8c9c27e0546"), "name" : "anil", "age" : 25, "city" : "chennai" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0547"), "name" : "suresh", "age" : 30, "city" : "bangalore" }
+    { "_id" : ObjectId("697f6e03f1edc8c9c27e0548"), "name" : "priya", "age" : 22, "city" : "hyderabad", "state":"TS" }
+
+
+db.emps.deleteOne({name:"anil"})
+->  { "acknowledged" : true, "deletedCount" : 1 }
+
+
+db.emps.deleteMany({city:"hyderabad"})
+->  { "acknowledged" : true, "deletedCount" : 2 }
+
+
+db.emps.find()
+->  { "_id" : ObjectId("697f6e03f1edc8c9c27e0547"), "name" : "suresh", "age" : 30, "city" : "bangalore" }
