@@ -1,0 +1,70 @@
+### Read all users
+GET http://localhost:4000/user-api/users
+
+### Read user by objectID
+GET http://localhost:4000/user-api/users/697dbc6e3ff5d2532b61cd32
+
+### Create user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"Manohar", 
+    "password":"Sai@123",
+    "age":21
+}
+
+
+### Update user
+PUT http://localhost:4000/user-api/users/697dbc6e3ff5d2532b61cd32
+Content-Type: application/json
+
+{
+    "username":"Manohar",
+    "password":"Sai@123",
+    "age":18
+}
+
+### Delete user
+DELETE http://localhost:4000/user-api/users/697dc5c83a64c66d9fba1d16
+
+
+
+
+
+
+
+
+#########################################################################
+
+
+
+
+
+
+
+###
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "pid":"1234dqwe", 
+    "productName":"IPhone",
+    "price":10000
+}
+
+###
+GET http://localhost:4000/product-api/products
+
+###
+GET http://localhost:4000/product-api/products/697dcebbde84202768b04d90
+
+###
+PUT http://localhost:4000/product-api/products/697dcc100def86a5cc85be32
+Content-Type: application/json
+
+{
+    "pid":"APli10L3",
+    "productName": "Laptop",
+    "price": 100000
+}
