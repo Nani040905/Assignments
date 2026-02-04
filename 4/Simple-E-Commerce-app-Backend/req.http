@@ -1,0 +1,89 @@
+###Create product req
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productName":"tv",
+    "price":70000,
+    "brand":"Sony"
+}
+
+###Create product req
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productName":"Laptop",
+    "price":70000,
+    "brand":"HP"
+}
+
+###Create product req
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productName":"Phone",
+    "price":25000,
+    "brand":"Realme"
+}
+
+
+### Get product list req
+GET http://localhost:3000/product-api/products
+
+
+
+#####################################################################
+
+###Create user req
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"Ravi",
+    "email":"ravi@gmail.com",
+    "password":"ravi123",
+    "cart":[]
+}
+
+###Create user req
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"Raju",
+    "email":"raju@gmail.com",
+    "password":"raju123",
+    "cart":[]
+}
+
+###Create user req
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"Vikas",
+    "email":"vikas@gmail.com",
+    "password":"vikas123",
+    "cart":[]
+}
+
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name":"ram",
+    "email":"ram@gmail.com",
+    "password":"ram123",
+    "cart":[]
+}
+
+
+### Req to add product to cart
+PUT http://localhost:3000/user-api/user-cart/userid/698070e93a0945a7dbbb9950/productid/6980679ecb4659a8ea32768a
+
+
+### Read User
+GET http://localhost:3000/user-api/users/698070e93a0945a7dbbb9950
