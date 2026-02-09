@@ -22,7 +22,7 @@ const connectDB = async ()=>{
     try {
         await connect(process.env.DB_URL)
         console.log("DB connection success")
-        app.listen(process.env.PORT,()=>console.log("server started"))
+        app.listen(process.env.PORT,()=>console.log("server started in port 3000"))
     } catch (err) {
         console.log("Err in DB connection",err)
     }

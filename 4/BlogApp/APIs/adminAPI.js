@@ -2,6 +2,6 @@ import express from 'express'
 
 export const adminRoute = express.Router()
 
-//Authenticate admin
+//login
 //Read all articles
-// Block or unblock uer roles
+// Block or unblock uesr roles

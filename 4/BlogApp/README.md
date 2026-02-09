@@ -17,3 +17,5 @@
     8. Design Schemas and create models
 
     9. Design REST APIs for all resources
+
+    10. Registration & login in common
