@@ -35,6 +35,11 @@ const connectDB = async ()=>{
 
 connectDB()
 
+//dealing with invalid paths
+app.use((req, res, next)=>{
+    res.json({ message: "Invalid path" });
+})
+
 //error handeling middleware
 app.use((err,req,res,next)=>{
     console.log(err)
