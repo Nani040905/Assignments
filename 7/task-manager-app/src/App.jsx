@@ -3,7 +3,7 @@ import TaskManager from './components/TaskManager'
 
 function App() {
   return (
-    <div>
+    <div className='select-none'>
       <TaskManager />
     </div>
   )

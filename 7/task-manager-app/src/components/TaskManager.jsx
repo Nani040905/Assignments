@@ -22,8 +22,8 @@ function TaskManager() {
         setTasks(temp)
     }
   return (
-    <div className='flex bg-amber-500 m-10 rounded-4xl p-10 shadow-2xl border-8 border-amber-600 shadow-amber-600 gap-1'>
-        <div className='w-2/6 h-61' ><AddTaskForm addTask={addTask} /></div>
+    <div className='flex bg-blue-100 m-10 rounded-4xl p-10 shadow-xl/10 border-8 border-b-black shadow-blue-500 gap-1'>
+        <div className='w-2/6 h-70' ><AddTaskForm addTask={addTask} /></div>
         <div className='w-1/3'><TaskList tasks={tasks} completed={completed} deleteTask={deleteTask} /></div>
         <div className='w-1/3'><TasksCount tasks={tasks} /></div>
         
